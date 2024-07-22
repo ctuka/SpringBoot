@@ -18,20 +18,19 @@ import java.time.LocalDateTime;
 @Table(name = "t_student")
 public class Student {
 
-    @Setter(AccessLevel.NONE)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Setter(AccessLevel.NONE)
     private Long id;
 
 
     @NotNull(message = "First name can not be null.")
     @NotBlank(message = "First name can not be whitespacd")
-    @Size(min = 2, max = 50, message = "First name must be between {min} and {max} characters.")
+    @Size(min = 2, max = 25, message = "First name must be between {min} and {max} characters.")
     @Column(nullable = false, length = 25)
     private String name;
     private String lastName;
     private Integer grade;
-
     private String phoneNumber;
     @Column(nullable = false, length = 50, unique = true)
     @Email(message = "Provide valid email.")
