@@ -23,7 +23,12 @@ public class Book {
     private Long id;
 
     @JsonProperty("bookName")  //it show as json type
-    private String name;
+    private String title;
+
+    private String authors;
+    private String publisher;
+    private String publishedDate;
+    private String isbn;
 
     @ManyToOne
     @JoinColumn(name = "student_id")
